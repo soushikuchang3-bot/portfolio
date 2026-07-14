@@ -478,6 +478,78 @@
 
         .price-info-card ul { list-style: none; }
 
+        /* スマホ用プランカード（PCでは非表示） */
+        .price-cards { display: none; }
+
+        .pm-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 26px 24px;
+            position: relative;
+        }
+
+        .pm-card.featured { border-color: var(--black); }
+
+        .pm-card.featured::before {
+            content: 'おすすめ';
+            position: absolute;
+            top: -11px;
+            left: 24px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .pm-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pm-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+        }
+
+        .pm-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--black);
+        }
+
+        .pm-list { display: flex; flex-direction: column; gap: 12px; }
+
+        .pm-list .row {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .pm-list dt {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            padding-top: 2px;
+        }
+
+        .pm-list dd {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .pm-list dd .check { color: var(--black); }
+        .pm-list dd .dash { color: #ccc; }
+
         /* 連絡先 */
         .contact-section {
             background: var(--black);
@@ -565,6 +637,8 @@
             .price-info { grid-template-columns: 1fr; }
             .campaign { padding: 26px 22px; }
             .price-monthly { padding: 24px 22px; }
+            .price-table-wrap { display: none; }
+            .price-cards { display: grid; gap: 20px; }
             .contact-section { padding: 70px 20px; }
             footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
         }
@@ -716,6 +790,54 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="price-cards fade">
+            <div class="pm-card">
+                <div class="pm-head">
+                    <span class="pm-name">LIGHT</span>
+                    <span class="pm-price">¥25,000〜</span>
+                </div>
+                <dl class="pm-list">
+                    <div class="row"><dt>こんな方に</dt><dd>まずお店のWeb上の“入口”が欲しい</dd></div>
+                    <div class="row"><dt>ページ構成</dt><dd>1ページ完結</dd></div>
+                    <div class="row"><dt>含まれる内容</dt><dd>トップ／メニュー・料金／ギャラリー／アクセス／ご予約・LINE導線</dd></div>
+                    <div class="row"><dt>スマホ対応</dt><dd><span class="check">✓</span></dd></div>
+                    <div class="row"><dt>修正回数</dt><dd>2回まで</dd></div>
+                    <div class="row"><dt>納期の目安</dt><dd>約1週間</dd></div>
+                    <div class="row"><dt>納品後サポート</dt><dd><span class="dash">–</span></dd></div>
+                </dl>
+            </div>
+            <div class="pm-card featured">
+                <div class="pm-head">
+                    <span class="pm-name">STANDARD</span>
+                    <span class="pm-price">¥50,000〜</span>
+                </div>
+                <dl class="pm-list">
+                    <div class="row"><dt>こんな方に</dt><dd>検索でも見つけてほしい／しっかり作り込みたい</dd></div>
+                    <div class="row"><dt>ページ構成</dt><dd>複数ページ</dd></div>
+                    <div class="row"><dt>含まれる内容</dt><dd>LIGHT＋ページ分け／お店について／簡単なSEO（地域＋業種）／アニメーション</dd></div>
+                    <div class="row"><dt>スマホ対応</dt><dd><span class="check">✓</span></dd></div>
+                    <div class="row"><dt>修正回数</dt><dd>3回まで</dd></div>
+                    <div class="row"><dt>納期の目安</dt><dd>約2週間</dd></div>
+                    <div class="row"><dt>納品後サポート</dt><dd><span class="dash">–</span></dd></div>
+                </dl>
+            </div>
+            <div class="pm-card">
+                <div class="pm-head">
+                    <span class="pm-name">PREMIUM</span>
+                    <span class="pm-price">¥100,000〜</span>
+                </div>
+                <dl class="pm-list">
+                    <div class="row"><dt>こんな方に</dt><dd>集客の柱として本格的に育てたい</dd></div>
+                    <div class="row"><dt>ページ構成</dt><dd>フルオーダー</dd></div>
+                    <div class="row"><dt>含まれる内容</dt><dd>STANDARD＋予約システム連携／お知らせ更新機能／詳細SEO</dd></div>
+                    <div class="row"><dt>スマホ対応</dt><dd><span class="check">✓</span></dd></div>
+                    <div class="row"><dt>修正回数</dt><dd>期間内 無制限</dd></div>
+                    <div class="row"><dt>納期の目安</dt><dd>ご相談</dd></div>
+                    <div class="row"><dt>納品後サポート</dt><dd><span class="check">✓</span></dd></div>
+                </dl>
+            </div>
         </div>
 
         <div class="price-monthly fade">
